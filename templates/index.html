@@ -1,170 +1,174 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<nav class="login-pf-page">
-    <b><a href="{{ url_for('index') }}">KT Calculator Dashboard</a></b>
-</nav>
-<hr>
 
-<form name="myForm" id="kc-form-login" action='/index' method="POST" onsubmit="return validateForm()" method="post"
-    required>
+<div class="login-pf-page">
+<div id="kc-header" class="login-pf-page-header">
+    <b><div id="kc-header-wrapper">KT Calculator Dashboard</div></b>
+</div>
 
-    <!-- User information Input -->
-    <b><label for="User" class="pf-c-form__label pf-c-form__label-text">Name</label></b>
-    <input placeholder="Name of Person" class="pf-c-form-control" name="User" type="text"
-        value="{{request.form['User']}}"></input>
-    <br></br>
+<form name="myForm" class="card-pf" id="kc-form-login" action='/index' method="POST" onsubmit="return validateForm()" method="post"
+required>
 
-    <b><label for="Email" class="pf-c-form__label pf-c-form__label-text">Email</label></b>
-    <input placeholder="Provide your Email Here" class="pf-c-form-control" name="Email" type="text"
-        value="{{request.form['Email']}}"></input>
-    <br></br>
+<!-- User information Input -->
+<b><label for="User" class="pf-c-form__label pf-c-form__label-text">Name</label></b>
+<input placeholder="Name of Person" class="pf-c-form-control" name="User" type="text"
+    value="{{request.form['User']}}"></input>
+<br></br>
 
-    <b><label for="Batch" class="pf-c-form__label pf-c-form__label-text">Batch Information</label></b>
-    <input placeholder="Like Nov2021" class="pf-c-form-control" name="Batch" type="text"
-        value="{{request.form['Batch']}}"></input>
-    <br></br>
+<b><label for="Email" class="pf-c-form__label pf-c-form__label-text">Email</label></b>
+<input placeholder="Provide your Email Here" class="pf-c-form-control" name="Email" type="text"
+    value="{{request.form['Email']}}"></input>
+<br></br>
 
-    <!-- Role Input -->
-    <b>
-        <lable class="pf-c-form__label pf-c-form__label-text">Choose your Role in KT</lable>
-    </b>
-    <select name="Role" class="pf-c-form-control">
-        <option value="Mentor">Mentor</option>
-        <option value="Mentee">Mentee</option>
-        <option value="Account Manager">Account Manager</option>
-        <option value="Project Manager">Project Manager</option>
-        <option value="Client">Client</option>
+<b><label for="Batch" class="pf-c-form__label pf-c-form__label-text">Batch Information</label></b>
+<input placeholder="Like Nov2021" class="pf-c-form-control" name="Batch" type="text"
+    value="{{request.form['Batch']}}"></input>
+<br></br>
+
+<!-- Role Input -->
+<b>
+    <lable class="pf-c-form__label pf-c-form__label-text">Choose your Role in KT</lable>
+</b>
+<select name="Role" class="pf-c-form-control">
+    <option value="Mentor">Mentor</option>
+    <option value="Mentee">Mentee</option>
+    <option value="Account Manager">Account Manager</option>
+    <option value="Project Manager">Project Manager</option>
+    <option value="Client">Client</option>
+</select>
+<br></br>
+<hr><hr>
+<br>
+<label class="pf-c-form__label">
+    <b>The 'Knowledge Transfer' (KT) is successfully completed?</b>
+</label>
+
+<select class="pf-c-form-control">
+    <option selected="" disabled="" value="-1">Please choose..</option>
+    <option value="1">Strongly Disagree</option>
+    <option value="2">Disagree</option>
+    <option value="3">Neutral</option>
+    <option value="4">Agree</option>
+    <option value="5">Strongly Agree</option>
+</select>
+
+<br><br>
+<label class="pf-c-form__label">
+    <b>All the necessary documents are shared and stored in a central drive?</b>
+</label>
+<select class="pf-c-form-control">
+    <option selected="" disabled="" value="-1">Please choose..</option>
+    <option value="1">Strongly Disagree</option>
+    <option value="2">Disagree</option>
+    <option value="3">Neutral</option>
+    <option value="4">Agree</option>
+    <option value="5">Strongly Agree</option>
+</select>
+<br><br>
+<label class="pf-c-form__label">
+    <b>All the necessary learning topics are covered as part of the KT exercise?</b>
+</label>
+<select class="pf-c-form-control">
+    <option selected="" disabled="" value="-1">Please choose..</option>
+    <option value="1">Strongly Disagree</option>
+    <option value="2">Disagree</option>
+    <option value="3">Neutral</option>
+    <option value="4">Agree</option>
+    <option value="5">Strongly Agree</option>
+</select>
+<br><br>
+<label class="pf-c-form__label">
+    <b>Appropriate hand-holding through buddy-up/ shadowing is done?</b>
+</label>
+<select class="pf-c-form-control">
+    <option selected="" disabled="" value="-1">Please choose..</option>
+    <option value="1">Strongly Disagree</option>
+    <option value="2">Disagree</option>
+    <option value="3">Neutral</option>
+    <option value="4">Agree</option>
+    <option value="5">Strongly Agree</option>
+</select>
+<br><br>
+<label class="pf-c-form__label">
+    <b>Worked on cases/ project requirements & deliverables together (mentor & mentee)</b>
+</label>
+
+<select class="pf-c-form-control">
+    <option selected="" disabled="" value="-1">Please choose..</option>
+    <option value="1">Strongly Disagree</option>
+    <option value="2">Disagree</option>
+    <option value="3">Neutral</option>
+    <option value="4">Agree</option>
+    <option value="5">Strongly Agree</option>
+</select>
+<br><br>
+<label class="pf-c-form__label">
+    <b>Attended 100% of the client meetings together (mentor & mentee)</b>
+</label>
+<select class="pf-c-form-control">
+    <option selected="" disabled="" value="-1">Please choose..</option>
+    <option value="1">Strongly Disagree</option>
+    <option value="2">Disagree</option>
+    <option value="3">Neutral</option>
+    <option value="4">Agree</option>
+    <option value="5">Strongly Agree</option>
+</select>
+<br><br>
+<label class="pf-c-form__label">
+    <b>50% of the meetings are led by the mentee</b>
+</label>
+<select class="pf-c-form-control">
+    <option selected="" disabled="" value="-1">Please choose..</option>
+    <option value="1">Strongly Disagree</option>
+    <option value="2">Disagree</option>
+    <option value="3">Neutral</option>
+    <option value="4">Agree</option>
+    <option value="5">Strongly Agree</option>
+</select>
+<br><br>
+<label class="pf-c-form__label">
+    <b>At least 2 stories are individually completed by the mentee</b>
+</label>
+
+<select class="pf-c-form-control">
+    <option selected="" disabled="" value="-1">Please choose..</option>
+    <option value="1">Strongly Disagree</option>
+    <option value="2">Disagree</option>
+    <option value="3">Neutral</option>
+    <option value="4">Agree</option>
+    <option value="5">Strongly Agree</option>
+</select>
+<br><br>
+<label class="pf-c-form__label">
+    <b>Evaluation of all the stories are done by the mentor and the feedback is shared with the mentee</b>
+    <select class="pf-c-form-control">
+        <option selected="" disabled="" value="-1">Please choose..</option>
+        <option value="1">Strongly Disagree</option>
+        <option value="2">Disagree</option>
+        <option value="3">Neutral</option>
+        <option value="4">Agree</option>
+        <option value="5">Strongly Agree</option>
     </select>
-    <br></br>
+    <br><br>
+    <label class="pf-c-form__label">
 
-    <!-- Questions -->
-    <div>
-        <br>
-        <li class="pf-c-form__label">
-            <b>The 'Knowledge Transfer' (KT) is successfully completed?</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-        <li class="pf-c-form__label">
-            <b>All the necessary documents are shared and stored in a central drive?</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-        <li class="pf-c-form__label">
-            <b>All the necessary learning topics are covered as part of the KT exercise?</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-        <li class="pf-c-form__label">
-            <b>Appropriate hand-holding through buddy-up/ shadowing is done?</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-        <li class="pf-c-form__label">
-            <b>Worked on cases/ project requirements & deliverables together (mentor & mentee)</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-            <br><br>
-        <li class="pf-c-form__label">
-            <b>Attended 100% of the client meetings together (mentor & mentee)</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-        <li class="pf-c-form__label">
-            <b>50% of the meetings are led by the mentee</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-        <li class="pf-c-form__label">
-            <b>At least 2 stories are individually completed by the mentee</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-        <li class="pf-c-form__label">
-            <b>Evaluation of all the stories are done by the mentor and the feedback is shared with the mentee</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-        <li class="pf-c-form__label">
-            <b>The client is confident on the mentee?</b>
-            <select class="pf-c-form-control">
-                <option selected="" disabled="" value="-1">Please choose..</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-        </li>
-        <br><br>
-    </div>
+        <b>The client is confident on the mentee?</b>
+    </label>
+    <select class="pf-c-form-control">
+        <option selected="" disabled="" value="-1">Please choose..</option>
+        <option value="1">Strongly Disagree</option>
+        <option value="2">Disagree</option>
+        <option value="3">Neutral</option>
+        <option value="4">Agree</option>
+        <option value="5">Strongly Agree</option>
+    </select>
 
+    <br><br>
 </form>
-<hr>
+</div>
+
+
 <script>
     function validateForm() {
         var x = document.forms["myForm"]["User"].value;

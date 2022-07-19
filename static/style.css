@@ -26,11 +26,5 @@ h2 {
 
 nav a {
     color: rgb(88, 73, 173);
-    font-size: 3em;
-    margin-left: 50px;
-    text-decoration: none;
 }
 
-.login-pf-page{
-    padding: 5px 50px 5px 50px;
-}
