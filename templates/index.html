@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<nav class="login-pf-page">
+    <b><a href="{{ url_for('index') }}">KT Calculator Dashboard</a></b>
+</nav>
+<hr>
+
+<form name="myForm" id="kc-form-login" action='/index' method="POST" onsubmit="return validateForm()" method="post"
+    required>
+
+    <!-- User information Input -->
+    <b><label for="User" class="pf-c-form__label pf-c-form__label-text">Name</label></b>
+    <input placeholder="Name of Person" class="pf-c-form-control" name="User" type="text"
+        value="{{request.form['User']}}"></input>
+    <br></br>
+
+    <b><label for="Email" class="pf-c-form__label pf-c-form__label-text">Email</label></b>
+    <input placeholder="Provide your Email Here" class="pf-c-form-control" name="Email" type="text"
+        value="{{request.form['Email']}}"></input>
+    <br></br>
+
+    <b><label for="Batch" class="pf-c-form__label pf-c-form__label-text">Batch Information</label></b>
+    <input placeholder="Like Nov2021" class="pf-c-form-control" name="Batch" type="text"
+        value="{{request.form['Batch']}}"></input>
+    <br></br>
+
+    <!-- Role Input -->
+    <b>
+        <lable class="pf-c-form__label pf-c-form__label-text">Choose your Role in KT</lable>
+    </b>
+    <select name="Role" class="pf-c-form-control">
+        <option value="Mentor">Mentor</option>
+        <option value="Mentee">Mentee</option>
+        <option value="Account Manager">Account Manager</option>
+        <option value="Project Manager">Project Manager</option>
+        <option value="Client">Client</option>
+    </select>
+    <br></br>
+
+    <!-- Questions -->
+    <div>
+        <br>
+        <li class="pf-c-form__label">
+            <b>The 'Knowledge Transfer' (KT) is successfully completed?</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+        <li class="pf-c-form__label">
+            <b>All the necessary documents are shared and stored in a central drive?</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+        <li class="pf-c-form__label">
+            <b>All the necessary learning topics are covered as part of the KT exercise?</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+        <li class="pf-c-form__label">
+            <b>Appropriate hand-holding through buddy-up/ shadowing is done?</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+        <li class="pf-c-form__label">
+            <b>Worked on cases/ project requirements & deliverables together (mentor & mentee)</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+            <br><br>
+        <li class="pf-c-form__label">
+            <b>Attended 100% of the client meetings together (mentor & mentee)</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+        <li class="pf-c-form__label">
+            <b>50% of the meetings are led by the mentee</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+        <li class="pf-c-form__label">
+            <b>At least 2 stories are individually completed by the mentee</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+        <li class="pf-c-form__label">
+            <b>Evaluation of all the stories are done by the mentor and the feedback is shared with the mentee</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+        <li class="pf-c-form__label">
+            <b>The client is confident on the mentee?</b>
+            <select class="pf-c-form-control">
+                <option selected="" disabled="" value="-1">Please choose..</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+        </li>
+        <br><br>
+    </div>
+
+</form>
+<hr>
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["User"].value;
+        var y = document.forms["myForm"]["Email"].value;
+        if (x == "" || x == null) {
+            if (y == "" || y == null) {
+                alert("User and Email must be filled out");
+                return false;
+            }
+            else {
+                alert("User Name must be filled out");
+                return false;
+            }
+
+        }
+        if (y == "" || y == null) {
+            alert("Email must be filled out");
+            return false;
+        }
+    }
+
+
+</script>
+{% endblock %}

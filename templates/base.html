@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>{{ title }}</title>
+    <link
+        href="https://auth.knoldus.com/auth/resources/n3g9v/common/keycloak/web_modules/@patternfly/react-core/dist/styles/base.css"
+        rel="stylesheet">
+    <link
+        href="https://auth.knoldus.com/auth/resources/n3g9v/common/keycloak/web_modules/@patternfly/react-core/dist/styles/app.css"
+        rel="stylesheet">
+    <link
+        href="https://auth.knoldus.com/auth/resources/n3g9v/common/keycloak/node_modules/patternfly/dist/css/patternfly.min.css"
+        rel="stylesheet">
+    <link
+        href="https://auth.knoldus.com/auth/resources/n3g9v/common/keycloak/node_modules/patternfly/dist/css/patternfly-additions.min.css"
+        rel="stylesheet">
+    <link href="https://auth.knoldus.com/auth/resources/n3g9v/common/keycloak/lib/pficon/pficon.css" rel="stylesheet">
+    <link href="https://auth.knoldus.com/auth/resources/n3g9v/login/go1up/css/login.css" rel="stylesheet">
+    <link href="https://auth.knoldus.com/auth/resources/n3g9v/login/go1up/css/tile.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    {% block style %}
+    {% endblock %}
+</head>
+
+<body class data-new-gr-c-s-check-loaded="14.1068.0" data-gr-ext-installed>
+    {% block main %}
+    {% endblock %}
+</body>
+
+</html>

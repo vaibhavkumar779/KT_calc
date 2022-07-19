@@ -1,0 +1,36 @@
+body {
+    background-color: #1A2035;
+}
+b{
+    color: #FFFAF0;
+}
+a,
+h1,
+h2 {
+    color: #377ba8;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+h1 {
+    border-bottom: 2px solid #eee;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+
+nav a {
+    color: rgb(88, 73, 173);
+    font-size: 3em;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.login-pf-page{
+    padding: 5px 50px 5px 50px;
+}
