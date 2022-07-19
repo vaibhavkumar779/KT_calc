@@ -24,7 +24,16 @@ h2 {
 }
 
 
-nav a {
+#kc-header-wrapper {
     color: rgb(88, 73, 173);
 }
 
+.login-pf-page {
+    font-size: 15px;
+    color: #72767b;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    border-bottom: 1px solid #ededed;
+    width: 100%;
+}
