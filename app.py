@@ -42,12 +42,10 @@ def index():
         avg_score = total_score/10
         percent_scored = avg_score/5 * 100
 
-        return render_template('index.html', title="Result", entry = "Your last Entry score is {} %".format(percent_scored))
+        return render_template('result.html', title="Result", name=Name, score = "{} %".format(percent_scored))
 
     return render_template('index.html', title="Feedback Portal")
-
-
-
+    
 @app.route('/register', methods=['GET','POST'])
 def register():
     form = RegisterForm(request.form)
