@@ -38,9 +38,11 @@ def index():
         Remark9 = str(request.form['Remark9'])
         Remark10 = str(request.form['Remark10'])
 
-        print(Name,Email,Batch,Role)
+        total_score = Question1+Question2+Question3+Question4+Question5+Question6+Question7+Question8+Question9+Question10
+        avg_score = total_score/10
+        percent_scored = avg_score/5 * 100
 
-        return render_template('index.html', title="Result")
+        return render_template('index.html', title="Result", entry = "Your last Entry score is {} %".format(percent_scored))
 
     return render_template('index.html', title="Feedback Portal")
 
