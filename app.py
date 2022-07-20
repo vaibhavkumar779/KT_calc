@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = 'your secret key'
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('index.html', title="Home Page")
+    return redirect(url_for('login'))
 
 @app.route('/index', methods=['GET','POST'])
 def index():
