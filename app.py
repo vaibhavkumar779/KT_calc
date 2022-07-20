@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, flash, redirect, url_for, session, logging
 #from flask_mysqldb import MySQL
-from wtforms import Form, StringField, TextAreaField, PasswordField
-from wtforms.validators import InputRequired, Length, DataRequired, EqualTo
+from registerform import RegisterForm
 from passlib.hash import sha256_crypt
 
 app = Flask(__name__, template_folder='./templates')
@@ -28,27 +27,23 @@ def index():
         Question8 = int(request.form['Question8'])
         Question9 = int(request.form['Question9'])
         Question10 = int(request.form['Question10'])
-        Recommendation1 = str(request.form['Recommendation1'])
-        Recommendation2 = str(request.form['Recommendation2'])
-        Recommendation3 = str(request.form['Recommendation3'])
-        Recommendation4 = str(request.form['Recommendation4'])
-        Recommendation5 = str(request.form['Recommendation5'])
-        Recommendation6 = str(request.form['Recommendation6'])
-        Recommendation7 = str(request.form['Recommendation7'])
-        Recommendation8 = str(request.form['Recommendation8'])
-        Recommendation9 = str(request.form['Recommendation9'])
-        Recommendation10 = str(request.form['Recommendation10'])
+        Remark1 = str(request.form['Remark1'])
+        Remark2 = str(request.form['Remark2'])
+        Remark3 = str(request.form['Remark3'])
+        Remark4 = str(request.form['Remark4'])
+        Remark5 = str(request.form['Remark5'])
+        Remark6 = str(request.form['Remark6'])
+        Remark7 = str(request.form['Remark7'])
+        Remark8 = str(request.form['Remark8'])
+        Remark9 = str(request.form['Remark9'])
+        Remark10 = str(request.form['Remark10'])
 
         print(Name,Email,Batch,Role)
 
         return render_template('index.html', title="Result")
 
-class RegisterForm(Form):
-    name = StringField('Name', validators=[InputRequired(),Length(min=1, max=50)])
-    username = StringField('Username', validators=[InputRequired(),Length(min=4, max=25)])
-    email = StringField('Email', validators=[InputRequired(),Length(min=6 , max=50)])
-    password = PasswordField('Password', validators=[InputRequired(),DataRequired(),EqualTo('confirm', message='Password do not match')])
-    confirm = PasswordField('Confirm Password', validators=[InputRequired()])
+    return render_template('index.html', title="Feedback Portal")
+
 
 
 @app.route('/register', methods=['GET','POST'])
