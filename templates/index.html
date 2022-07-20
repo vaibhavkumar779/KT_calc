@@ -8,8 +8,8 @@
             <div id="kc-header-wrapper">KT Calculator Dashboard</div>
         </b>
     </div>
-    
-        <h3 align="center"><b>{{entry}}</b></h3>
+
+    <h3 align="center"><b>{{entry}}</b></h3>
 
     <form name="myForm" class="card-pf" id="kc-form-login" action='/index' method="POST"
         onsubmit="return validateForm()" method="post" required>
@@ -30,9 +30,17 @@
             value="{{request.form['Batch']}}"></input>
         <br></br>
 
-        <b><label for="Topic" class="pf-c-form__label pf-c-form__label-text">Batch Information</label></b>
-        <input placeholder="Yout KT Topic" class="pf-c-form-control" name="Topic" type="text"
-            value="{{request.form['Topic']}}"></input>
+        <b><label for="Topic" class="pf-c-form__label pf-c-form__label-text">KT Topic</label></b>
+        <select name="Topic" class="pf-c-form-control">
+            <option selected="" disabled="">Please choose..</option>
+            <option value="Kuberntes">Kubernetes</option>
+            <option value="Ansible">Ansible</option>
+            <option value="Docker">Docker</option>
+            <option value="AWS">AWS</option>
+            <option value="GCP">GCP</option>
+            <option value="Linux">Linux</option>
+            <option value="Jenkins">Jenkins</option>
+        </select>
         <br></br>
 
         <!-- Role Input -->
@@ -65,10 +73,10 @@
         </select>
         <br>
         <label for="Remark1" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark1" " class="pf-c-form-control" ></input>
+        <input name="Remark1" " class=" pf-c-form-control"></input>
 
         <br><br>
-        <label class="pf-c-form__label">
+        <label for="Question2" class="pf-c-form__label">
             <b>All the necessary documents are shared and stored in a central drive?</b>
         </label>
         <select class="pf-c-form-control" name="Question2">
@@ -81,9 +89,9 @@
         </select>
         <br>
         <label for="Remark2" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark2"  class="pf-c-form-control" ></input>
+        <input name="Remark2" class="pf-c-form-control"></input>
         <br><br>
-        <label class="pf-c-form__label">
+        <label for="Question3" class="pf-c-form__label">
             <b>All the necessary learning topics are covered as part of the KT exercise?</b>
         </label>
         <select class="pf-c-form-control" name="Question3">
@@ -96,9 +104,9 @@
         </select>
         <br>
         <label for="Remark3" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark3"  class="pf-c-form-control" ></input>
+        <input name="Remark3" class="pf-c-form-control"></input>
         <br><br>
-        <label class="pf-c-form__label">
+        <label for="Question4" class="pf-c-form__label">
             <b>Appropriate hand-holding through buddy-up/ shadowing is done?</b>
         </label>
         <select class="pf-c-form-control" name="Question4">
@@ -111,9 +119,9 @@
         </select>
         <br>
         <label for="Remark4" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark4"  class="pf-c-form-control" ></input>
+        <input name="Remark4" class="pf-c-form-control"></input>
         <br><br>
-        <label class="pf-c-form__label">
+        <label name="Question5" class="pf-c-form__label">
             <b>Worked on cases/ project requirements & deliverables together (mentor & mentee)</b>
         </label>
 
@@ -127,9 +135,9 @@
         </select>
         <br>
         <label for="Remark5" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark5"  class="pf-c-form-control" ></input>
+        <input name="Remark5" class="pf-c-form-control"></input>
         <br><br>
-        <label class="pf-c-form__label">
+        <label for="Question6" class="pf-c-form__label">
             <b>Attended 100% of the client meetings together (mentor & mentee)</b>
         </label>
         <select class="pf-c-form-control" name="Question6">
@@ -142,9 +150,9 @@
         </select>
         <br>
         <label for="Remark6" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark6"  class="pf-c-form-control" ></input>
+        <input name="Remark6" class="pf-c-form-control"></input>
         <br><br>
-        <label class="pf-c-form__label">
+        <label for="Question7" class="pf-c-form__label">
             <b>50% of the meetings are led by the mentee</b>
         </label>
         <select class="pf-c-form-control" name="Question7">
@@ -157,9 +165,9 @@
         </select>
         <br>
         <label for="Remark7" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark7"  class="pf-c-form-control" ></input>
+        <input name="Remark7" class="pf-c-form-control"></input>
         <br><br>
-        <label class="pf-c-form__label">
+        <label for="Question8" class="pf-c-form__label">
             <b>At least 2 stories are individually completed by the mentee</b>
         </label>
 
@@ -173,9 +181,9 @@
         </select>
         <br>
         <label for="Remark8" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark8"  class="pf-c-form-control" ></input>
+        <input name="Remark8" class="pf-c-form-control"></input>
         <br><br>
-        <label class="pf-c-form__label">
+        <label for="Question9" class="pf-c-form__label">
             <b>Evaluation of all the stories are done by the mentor and the feedback is shared with the mentee</b>
         </label>
         <select class="pf-c-form-control" name="Question9">
@@ -188,9 +196,9 @@
         </select>
         <br>
         <label for="Remark9" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark9"  class="pf-c-form-control" ></input>
+        <input name="Remark9" class="pf-c-form-control"></input>
         <br><br>
-        <label class="pf-c-form__label">
+        <label for="Question10" class="pf-c-form__label">
 
             <b>The client is confident on the mentee?</b>
         </label>
@@ -204,7 +212,7 @@
         </select>
         <br>
         <label for="Remark10" class="pf-c-form__label"> Remarks Please !</label>
-        <input name="Remark10"  class="pf-c-form-control" ></input>
+        <input name="Remark10" class="pf-c-form-control"></input>
         <br><br>
         <hr>
         <div id="kc-form-buttons" class="form-group">
@@ -220,6 +228,21 @@
     function validateForm() {
         var x = document.forms["myForm"]["User"].value;
         var y = document.forms["myForm"]["Email"].value;
+        var a = document.form['Question1'].value;
+        var b = document.form['Question2'].value;
+        var c = document.form['Question3'].value;
+        var d = document.form['Question4'].value;
+        var e = document.form['Question5'].value;
+        var f = document.form['Question6'].value;
+        var g = document.form['Question7'].value;
+        var h = document.form['Question8'].value;
+        var i = document.form['Question9'].value;
+        var j = document.form['Question10'].value;
+
+        if (b == "" || b == null || a == "" || a == null || c == "" || c == null || d == "" || d == null || e == "" || e == null || f == "" || f == null || g == "" || g == null || h == "" || h == null || i == "" || i == null || j == "" || j == null){
+            alert("Missing value in Question feedback")
+        return false
+        }
         if (x == "" || x == null) {
             if (y == "" || y == null) {
                 alert("User and Email must be filled out");
