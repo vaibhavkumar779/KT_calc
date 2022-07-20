@@ -23,6 +23,9 @@ h2 {
     font-size: 1.2em;
 }
 
+* {
+    box-sizing: content-box;
+}
 
 #kc-header-wrapper {
     color: rgb(88, 73, 173);
@@ -34,6 +37,8 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
-    border-bottom: 1px solid #ededed;
+    border-bottom: auto;
     width: 100%;
+    padding: 10px 20px 30px 20px;
+    margin-bottom: 0;
 }
