@@ -46,6 +46,7 @@ def index():
 
     return render_template('index.html', title="Feedback Portal")
     
+
 @app.route('/register', methods=['GET','POST'])
 def register():
     form = RegisterForm(request.form)
