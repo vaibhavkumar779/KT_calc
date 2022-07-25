@@ -59,3 +59,96 @@ sudo systemctl start mysql.service
 
 * sudo apt-get purge mysql\* libmysql\*
 * sudo apt autoremove
+
+##### installing docker first
+
+* prerequisites
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+* key addition
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+* update for cache
+
+sudo apt update
+
+apt-cache policy docker-ce
+
+docker-ce:
+
+  Installed: (none)
+
+  Candidate: 5:20.10.17~3-0~ubuntu-jammy
+
+  Version table:
+
+     5:20.10.17~3-0~ubuntu-jammy 500
+
+        500 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages
+
+     5:20.10.16~3-0~ubuntu-jammy 500
+
+        500 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages
+
+     5:20.10.15~3-0~ubuntu-jammy 500
+
+        500 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages
+
+     5:20.10.14~3-0~ubuntu-jammy 500
+
+        500 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages
+
+     5:20.10.13~3-0~ubuntu-jammy 500
+
+        500 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages
+
+    * install docker
+
+    sudo apt install docker-ce
+
+    * Check status
+
+    sudo systemctl status docker
+
+    * Execute docker command without sudo
+
+    sudo usermod -aG docker ${USER}
+
+    * complete this  group addition 
+
+    su - ${USER}
+
+    * check if added to group
+
+    groups
+
+#### Using docker for msql
+
+* pull image
+
+docker pull mysql:latest
+
+* run image
+
+docker run --name kt_db  --restart on-failure  -d    -e MYSQL_ROOT_PASSWORD=123 mysql/mysql-server:8.0
+
+* check if running
+
+docker ps
+
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS                            PORTS                       NAMES
+
+44b3b5e1b389   mysql/mysql-server:8.0   "/entrypoint.sh mysq…"   25 seconds ago   Up 6 seconds (health: starting)   3306/tcp, 33060-33061/tcp   kt_db
+
+* get generated password
+
+docker logs kt_db
+
+
+
+
+
