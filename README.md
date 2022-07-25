@@ -48,10 +48,14 @@ Source: https://github.com/systemd/systemd/issues/16076
 
 sudo apt update
 sudo apt install mysql-server
+sudo apt install libmysqlclient-dev
 
 * Ensure that the server is running using the systemctl start command:
 
 sudo systemctl start mysql.service
+
+## follow:
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04
 
 #### error followup:
 

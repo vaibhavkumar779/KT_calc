@@ -1,3 +1,5 @@
 flask
 wtforms
 passlib
+flask-mysqldb
+FLASK-WTF
