@@ -13,10 +13,10 @@
                     <div id="kc-form-wrapper">
                         <form id="kc-form-login" onsubmit="login.disabled = true; return true;" method="post">
                             <div class="form-group">
-                                <label for="username" class="pf-c-form__label pf-c-form__label-text">Email</label>
+                                <label for="username" class="pf-c-form__label pf-c-form__label-text">Username</label>
 
                                 <input tabindex="1" id="username" class="pf-c-form-control" name="username" value=""
-                                type="email" autofocus autocomplete="off" aria-invalid="" />
+                                type="text" autofocus autocomplete="off" aria-invalid="" required/>
 
                             </div>
 
@@ -24,7 +24,7 @@
                                 <label for="password" class="pf-c-form__label pf-c-form__label-text">Password</label>
 
                                 <input tabindex="2" id="password" class="pf-c-form-control" name="password"
-                                    type="password" autocomplete="off" aria-invalid="" />
+                                    type="password" autocomplete="off" aria-invalid="" required/>
                             </div>
 
                             <div id="kc-form-buttons" class="form-group">
