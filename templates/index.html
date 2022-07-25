@@ -221,45 +221,4 @@
     </form>
 </div>
 
-
-<script>
-    function validateForm() {
-        var x = document.forms["myForm"]["Name"].value;
-        var y = document.forms["myForm"]["Email"].value;
-        var a = document.form['Question1'].value;
-        var b = document.form['Question2'].value;
-        var c = document.form['Question3'].value;
-        var d = document.form['Question4'].value;
-        var e = document.form['Question5'].value;
-        var f = document.form['Question6'].value;
-        var g = document.form['Question7'].value;
-        var h = document.form['Question8'].value;
-        var i = document.form['Question9'].value;
-        var j = document.form['Question10'].value;
-        
-
-        if (b == "" || b == null || a == "" || a == null || c == "" || c == null || d == "" || d == null || e == "" || e == null || f == "" || f == null || g == "" || g == null || h == "" || h == null || i == "" || i == null || j == "" || j == null){
-            alert("Missing value in Question feedback")
-        return false
-        }
-        if (x == "" || x == null) {
-            if (y == "" || y == null) {
-                alert("Name and Email must be filled out");
-                return false;
-            }
-            else {
-                alert("Name must be filled out");
-                return false;
-            }
-
-        }
-        if (y == "" || y == null) {
-            alert("Email must be filled out");
-            return false;
-        }
-       
-    }
-
-
-</script>
 {% endblock %}

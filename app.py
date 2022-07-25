@@ -11,8 +11,8 @@ app.config['SECRET_KEY'] = 'your secret key'
 # Config MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'knoldus@123456'
-app.config['MYSQL_DB'] = 'myflaskapp'
+app.config['MYSQL_PASSWORD'] = 'Password123#@!'
+app.config['MYSQL_DB'] = 'kt'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 # init MYSQL
 mysql = MySQL(app)
@@ -112,7 +112,7 @@ def login():
                 session['username'] = username
 
                 flash('You are now logged in', 'success')
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('index'))
             else:
                 error = 'Invalid login'
                 return render_template('login.html', error=error)
